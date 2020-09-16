@@ -24,6 +24,10 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path= 
+        - id: quickdelivery
+          uri: http://localhost:8085
+          predicates:
+            - Path=/quickDeliveries/** 
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -59,6 +63,10 @@ spring:
           uri: http://admin21-flower-sms:8080
           predicates:
             - Path= 
+        - id: quickdelivery
+          uri: http://admin21-flower-quickdelivery:8080
+          predicates:
+            - Path=/quickDeliveries/** 
       globalcors:
         corsConfigurations:
           '[/**]':

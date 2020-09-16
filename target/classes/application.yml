@@ -24,6 +24,10 @@ spring:
           uri: http://localhost:8084
           predicates:
             - Path= 
+        - id: quickdelivery
+          uri: http://localhost:8085
+          predicates:
+            - Path=/quickDeliveries/** 
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -44,21 +48,25 @@ spring:
     gateway:
       routes:
         - id: order
-          uri: http://flower-order:8080
+          uri: http://admin21-flower-order:8080
           predicates:
             - Path=/orders/**, /mypages/**
         - id: delivery
-          uri: http://flower-delivery:8080
+          uri: http://admin21-flower-delivery:8080
           predicates:
             - Path=/deliveries/**, /orderDetails/**
         - id: payment
-          uri: http://flower-payment:8080
+          uri: http://admin21-flower-payment:8080
           predicates:
             - Path=/payments/** 
         - id: sms
-          uri: http://flower-sms:8080
+          uri: http://admin21-flower-sms:8080
           predicates:
             - Path= 
+        - id: quickdelivery
+          uri: http://admin21-flower-quickdelivery:8080
+          predicates:
+            - Path=/quickDeliveries/** 
       globalcors:
         corsConfigurations:
           '[/**]':
